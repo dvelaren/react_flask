@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// Components
+import CurrentTime from './components/CurrentTime'
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +21,7 @@ function App() {
         >
           Learn React
         </a>
+        <CurrentTime />
       </header>
     </div>
   );
