@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class CurrentTime extends Component {
   state = {
-    currentTime: 0,
+    currentTime: '',
   }
 
   intervalID
