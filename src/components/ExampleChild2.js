@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
 // Redux
 import { connect } from "react-redux";
@@ -17,11 +17,16 @@ class ExampleChild2 extends Component {
   }
   render() {
     return (
-      <div>
-        <h3>Hijo 2</h3>
-        <p>User Status: {this.props.userStatus}</p>
-        <Button onClick={this.decreaseUserStatus}>Decrease</Button>
-      </div>
+      <Card>
+        <Card.Header>Hijo 2</Card.Header>
+        <Card.Body>
+          <Card.Title>Decrementar Status</Card.Title>
+          <Card.Text>User Status: {this.props.userStatus}</Card.Text>
+          <Button variant="primary" onClick={this.decreaseUserStatus}>
+            Decrease
+          </Button>
+        </Card.Body>
+      </Card>
     );
   }
 }
