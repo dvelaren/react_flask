@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button } from "react-bootstrap";
 
 // Redux
 import { connect } from "react-redux";
@@ -19,7 +20,7 @@ class ExampleChild1 extends Component {
       <div>
         <h3>Hijo 1</h3>
         <p>User Status: {this.props.userStatus}</p>
-        <button onClick={this.increaseUserStatus}>Increase</button>
+        <Button onClick={this.increaseUserStatus}>Increase</Button>
       </div>
     );
   }

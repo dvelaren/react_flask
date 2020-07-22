@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { Button } from "react-bootstrap";
 
 // Redux
 import { connect } from "react-redux";
+import { updateUserStatus } from "../redux/actions";
 
 const mapStateToProps = (state) => {
   return {
@@ -10,14 +12,18 @@ const mapStateToProps = (state) => {
 };
 
 class ExampleChild2 extends Component {
+  decreaseUserStatus = () => {
+    this.props.updateUserStatus(this.props.userStatus - 1)
+  }
   render() {
     return (
-    <div> 
-      <h3>Hijo 2</h3>
-    <p>User Status: {this.props.userStatus}</p>
-    </div>
+      <div>
+        <h3>Hijo 2</h3>
+        <p>User Status: {this.props.userStatus}</p>
+        <Button onClick={this.decreaseUserStatus}>Decrease</Button>
+      </div>
     );
   }
 }
 
-export default connect(mapStateToProps)(ExampleChild2);
+export default connect(mapStateToProps,{updateUserStatus})(ExampleChild2);
